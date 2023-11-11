@@ -1,0 +1,86 @@
+<div class="overflow-auto mt-2-5" [style]="this.bgMovieDetailsLayer">
+    <div class="drak-layer overflow-auto py-3">
+<div class="container" [style]="navhieghtValue">
+    <div class="row">
+        <div class="col-md-3">
+            <div class="movie-details-item-img">
+<div class="movie-img-holder rounded-3  overflow-hidden">
+                <img [src]="'https://image.tmdb.org/t/p/w500/'+movieDetailsData.poster_path" class="w-100" alt="">
+            </div>
+            </div>
+            
+        </div>
+        <div class="col-md-8 offset-md-1">
+            <div class="movie-details-item-data">
+<h2 class="h1 text-primary fw-bolder">{{movieDetailsData.original_title}}</h2>
+<p><span class="text-primary">{{movieDetailsData.release_date}} (EG)</span> <span class="text-primary fw-bolder">.</span><a class="text-decoration-none cursor-pointer">{{movieDetailsData.genres|genre}}</a><span class="text-primary fw-bolder">.</span> <span class="text-primary">{{movieDetailsData.runtime|timeHM}}</span> </p>
+<div class="d-flex justify-content-start align-items-center">
+<div class="chart-width">
+    <div class="card flex justify-content-center bg-transparent position-relative">
+    <p-chart type="doughnut" [data]="data" [options]="options"></p-chart>
+    <div class="position-absolute top-50 start-50 translate-middle text-primary fw-bold ">{{movieDetailsData.vote_average}} <sup>%</sup></div>
+</div>
+</div>
+<p class="text-primary pt-4 fw-bold">User Score</p>
+</div>
+<p class="text-light"><i>{{movieDetailsData.tagline}}</i></p>
+<h5 class="h5 text-primary fw-bold">Overview:</h5>
+<p class="text-primary">{{movieDetailsData.overview}}</p>
+<div>
+    <h5 class="h5 text-primary fw-bold">
+        Keywords:
+    </h5>
+    <ul class="list-unstyled">
+        <li class="active-nav-link d-inline-block p-1 bg-transparent me-2 mb-2" *ngFor="let movieKeyWord of movieKeyWords|keywordname">{{movieKeyWord}}</li>
+       
+    </ul>
+</div>
+
+            </div>
+        </div>
+    </div>
+<div class="cast text-center mt-5">
+    <h5 class="h5 text-primary fw-bold text-start">Cast:</h5>
+<div class="row gy-2">
+<div class="col-md-2" *ngFor="let castActor of cast">
+    <div class="actor-item rounded-2 overflow-hidden dark-layer">
+        <div class="actor-img-holder">
+            <img [src]="'https://image.tmdb.org/t/p/w500/'+castActor.profile_path" class="w-100" alt="">
+        </div>
+        <div class="actor-data">
+         <p class="actor-real-name text-primary fw-bold ps-1">{{castActor.original_name}}</p>
+         <p class="actor-character-name text-second-main-color fw-bold ps-1">{{castActor.character}}</p>
+        </div>
+    </div>
+</div>
+
+</div>
+<div class="show-actors-btns">
+    <button class="btn btn-primary  mt-2 bg-gradient-btn-more rounded-pill" *ngIf="realCastActorsNumber>12 && num<realCastActorsNumber" (click)="addMoreActorsToShow(num=realCastActorsNumber-num>=addActorsNumber?num+addActorsNumber:realCastActorsNumber)">See More <i class="fa-solid fa-arrow-down"></i></button>
+    <button class="btn btn-primary mt-2  bg-gradient-btn-less rounded-pill" *ngIf="realCastActorsNumber>12&&num>=realCastActorsNumber" (click)="addMoreActorsToShow(num=12)">See Less <i class="fa-solid fa-arrow-up"></i></button>
+</div>
+</div>    
+    <div class="mx-auto  mt-3">
+    <h5 class="h5 text-primary fw-bold text-start">Play Trailer:</h5>
+<div class="trailer-video-container mt-2" #trailerVideoContainer>
+<!-- <iframe width="1536" height="707" class="responsive-iframe" src="https://www.youtube.com/embed/W3zcjfAMYnA" title="Boudica: Queen Of War Official Trailer (2023) - Olga Kurylenko" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe> -->
+<youtube-player
+  [videoId]="movieVideoKey"
+  suggestedQuality="highres"
+  [height]="trailerVideoContainerHeight"
+  [width]="trailerVideoContainerWidth"
+  [startSeconds]="0"
+  [endSeconds]="6000" class="responsive-iframe">
+</youtube-player>
+</div>
+   
+</div>
+
+
+
+</div>
+    </div>
+
+</div>
+
+

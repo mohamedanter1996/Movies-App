@@ -1,0 +1,164 @@
+/* You can add global styles to this file, and also import other style files */
+.mt-10{
+   margin-top: 100px;
+}
+
+.mb-8{
+    margin-bottom: 80px;
+}
+
+body{
+    background-color: #212529;
+}
+
+.cursor-pointer{
+    cursor: pointer;
+}
+
+.item{
+    transform: scale(1);
+    background: transparent;
+    transition: all 0.5s;
+    border-radius: 0px;
+}
+
+.item:hover{
+    transform: scale(1.2);
+    position: absolute;
+    background: rgba(0, 0, 0, 0.8);
+    border-radius: 5px;
+    z-index: 2;
+}
+
+.item .item-data .item-details-data{
+    opacity: 0;
+    transition: all 0.5s;
+}
+
+.item:hover .item-data .item-details-data{
+    opacity: 1;
+}
+
+
+.main-color{
+    background-color: #212529!important;
+}
+
+.card{
+    border-color: transparent;
+}
+
+
+.p-paginator{
+      background-color: #212529!important;
+      border-color: transparent;
+} 
+
+
+.p-paginator .p-paginator-pages .p-paginator-page.p-highlight{
+    background-color: #0D6EFD;
+    color: white;
+}
+
+
+.p-paginator .p-paginator-prev,.p-paginator .p-paginator-next,.p-paginator .p-paginator-first,.p-paginator .p-paginator-last{
+    color: white!important;
+}
+
+
+.p-paginator .p-paginator-pages .p-paginator-page:hover{
+background-color: white;
+color: #0D6EFD;
+}
+
+.p-paginator .p-paginator-pages .p-paginator-page.p-highlight:hover{
+    background-color: #0D6EFD;
+    color: white;
+}
+
+.p-paginator .p-paginator-prev:hover,.p-paginator .p-paginator-next:hover,.p-paginator .p-paginator-first:hover,.p-paginator .p-paginator-last:hover{
+   background-color: white;
+color: #0D6EFD!important;
+}
+
+.gold{
+    color: gold;
+}
+
+
+.active-nav-link{
+    background-color: #0D6EFD;
+    color: #7ED8EF!important;
+    font-weight: 900;
+    border: 2PX solid #7ED8EF!important;
+    border-radius: 5px;
+    
+}
+
+
+.chart-width{
+    width: 70px;
+    z-index: 10;
+}
+
+.nav-link{
+    border: 2PX solid transparent;
+    border-radius: 5px;
+    transition: all 0.5s;
+    font-weight: 900;
+    margin-right: 3px!important;
+    margin-left: 3px!important;
+}
+
+.nav-link:hover{
+     background-color: #0D6EFD;
+    color: #7ED8EF!important;
+    font-weight: 900;
+    border: 2PX solid #7ED8EF;
+    border-radius: 5px;
+}
+
+.text-second-main-color{
+    color:#7ED8EF ;
+}
+
+.dark-layer{
+    background-color: rgba(0, 0, 0, 0.8);
+     border: 2PX solid #0D6EFD;
+}
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.loader-container{
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    background-image: url(assets/img/logo.jpg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: 100% 100vh;
+    z-index: 88;
+    opacity: 0.8;
+    margin-top: -2.5%;
+}
+
+.mat-mdc-progress-spinner { --mdc-circular-progress-active-indicator-color: #7ED8EF; }
+
+.bg-gradient-btn-more{
+    background-image: linear-gradient(#0D6EFD, transparent);
+}
+
+.bg-gradient-btn-more:hover{
+    background-image: linear-gradient(#0D6EFD, transparent,#0D6EFD);
+}
+
+.bg-gradient-btn-less{
+    background-image: linear-gradient(transparent,#0D6EFD);
+}
+
+.bg-gradient-btn-less:hover{
+     background-image: linear-gradient(transparent,#0D6EFD,transparent);
+}
+.show-actors-btns .btn-primary{
+background-color: transparent;
+}

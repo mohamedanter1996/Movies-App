@@ -1,0 +1,25 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-2 position-relative" *ngFor="let movie of moviesList|searchKey:searchKey">
+            <a class="text-decoration-none" [routerLink]="['/movie',movie.id]"> <div class="item cursor-pointer p-1">
+                <div class="img-holder rounded-2 overflow-hidden">
+                    <img [src]="'https://image.tmdb.org/t/p/w500/'+movie.poster_path" class="w-100" alt="">
+                </div>
+                <div class="item-data">
+                    <p class="fw-bolder text-primary">{{movie.title}}</p>
+                    <div class="d-flex justify-content-between align-items-center item-details-data">
+                        <p class=" text-primary fs-6 ">{{movie.release_date}}</p>
+                        <p class=" text-primary">Rating:<span class="fw-bolder text-primary">{{movie.vote_average}} </span> <i class="fa-solid fa-star gold"></i></p>
+                    </div>
+                </div>
+            </div></a>
+           
+        </div>
+    </div>
+
+    
+
+<div class="card flex justify-content-center main-color">
+    <p-paginator (onPageChange)="onPageChange($event)" [first]="first" [rows]="rows" [totalRecords]="5000" class=""></p-paginator>
+</div>
+</div>

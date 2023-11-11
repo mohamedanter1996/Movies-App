@@ -1,0 +1,40 @@
+
+
+.bg-movie-details-layer{
+    background-image: url('/assets/img/t5zCBSB5xMDKcDqe91qahCOUYVV.jpg');
+    background-position: top center;
+    background-size:100%;
+    background-repeat: no-repeat;
+}
+
+.drak-layer{
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+
+.trailer-video-container{
+   
+   position: relative;
+  width: 100%;
+  overflow: hidden;
+  padding-top: 56.25%;
+ 
+}
+
+
+.responsive-iframe{
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+
+  border: none;
+ 
+ 
+}
+
+.mt-2-5{
+margin-top: -2.5%;
+}
+
