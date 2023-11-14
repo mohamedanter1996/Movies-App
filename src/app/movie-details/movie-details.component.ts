@@ -1,5 +1,5 @@
 
-import { Component,OnInit,AfterViewInit,ElementRef,ViewChild } from '@angular/core';
+import { Component,OnInit,AfterViewInit,ElementRef,ViewChild, OnDestroy } from '@angular/core';
 import { MoviedataService } from '../moviedata.service';
 import { ActivatedRoute } from '@angular/router';
 import { MovieObject,movieDetailsData,genre, keyword, castActor } from '../movie-object';
@@ -8,7 +8,7 @@ import { MovieObject,movieDetailsData,genre, keyword, castActor } from '../movie
   templateUrl: './movie-details.component.html',
   styleUrls: ['./movie-details.component.css']
 })
-export class MovieDetailsComponent  implements OnInit,AfterViewInit{
+export class MovieDetailsComponent  implements OnInit,AfterViewInit,OnDestroy{
     addActorsNumber:number={} as number;
     trailerVideoContainerHeight:number={} as number;
     trailerVideoContainerWidth:number={} as number;
@@ -22,7 +22,7 @@ export class MovieDetailsComponent  implements OnInit,AfterViewInit{
     movieId:string|null="";
 navhieghtValue:string="";
 data: any;
-
+noSearch:boolean=false;
     options: any;
     @ViewChild('trailerVideoContainer') myIdentifier: ElementRef ={} as ElementRef;
 constructor(private _moviedataService:MoviedataService,private _activatedRoute:ActivatedRoute){}
@@ -31,7 +31,8 @@ ngOnInit(): void {
   const tag = document.createElement('script');
     tag.src = 'https://www.youtube.com/iframe_api';
     document.body.appendChild(tag);
-
+    this.noSearch=true;
+this._moviedataService.noSearch.next(this.noSearch)
 
     this._moviedataService.navHieght.subscribe({
       next:(value)=>{
@@ -155,6 +156,10 @@ addMoreActorsToShow(num:number){
     })
 }
 
+ngOnDestroy(): void {
+    this.noSearch=false;
+    this._moviedataService.noSearch.next(this.noSearch);
+}
 
     
 }

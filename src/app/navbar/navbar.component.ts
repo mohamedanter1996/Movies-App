@@ -10,6 +10,7 @@ import { MoviedataService } from '../moviedata.service';
 export class NavbarComponent implements AfterViewInit ,OnInit{
  searchKey:string=""; 
  loading:boolean=false;
+ noSearch:boolean=true;
  constructor(private _moviedataService:MoviedataService){}
 @ViewChild('nav') myIdentifier: ElementRef ={} as ElementRef;
 hieght:number=0;
@@ -19,6 +20,12 @@ ngOnInit(): void {
         this.loading=value;
       }
     })
+this._moviedataService.noSearch.subscribe({
+  next:(value)=>{
+    this.noSearch=value;
+  }
+})
+    
 }
   ngAfterViewInit(): void {
       this.hieght=this.myIdentifier.nativeElement.offsetHeight;

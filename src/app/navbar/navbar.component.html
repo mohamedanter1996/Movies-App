@@ -24,7 +24,7 @@
       
         
       </ul>
-      <form class="d-flex" role="search">
+      <form class="d-flex" role="search" *ngIf="!noSearch">
         <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"  (input)="searchForMove($event)">
         
       </form>

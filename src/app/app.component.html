@@ -1,6 +1,11 @@
 <app-navbar></app-navbar>
-<div [style]="navhieghtValue">
+<div  [style]="footerHieghtValue">
 <router-outlet></router-outlet>
 </div>
+<div class="position-sticky top-100" *ngIf="loading==false">
 <app-footer></app-footer>
+</div>
+
+
+
 

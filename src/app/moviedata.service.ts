@@ -7,9 +7,11 @@ import { Observable,BehaviorSubject } from 'rxjs';
   providedIn: 'root'
 })
 export class MoviedataService {
+footerHieght=new BehaviorSubject(0); 
 navHieght =new BehaviorSubject(0);
 searchKey=new BehaviorSubject('');
 loading=new BehaviorSubject(false);
+noSearch=new BehaviorSubject(false);
   constructor(private _httpClient:HttpClient) { }
   addMoviesToHome():Observable<any>
   {
