@@ -23,6 +23,7 @@ import { CastPipe } from './cast.pipe';
 import { YouTubePlayerModule } from '@angular/youtube-player';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import { LoaderInterceptor } from './loader.interceptor';
+import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -40,7 +41,8 @@ import { LoaderInterceptor } from './loader.interceptor';
     GenrePipe,
     TimeHMPipe,
     KeywordnamePipe,
-    CastPipe
+    CastPipe,
+    FooterComponent
   ],
   imports: [
     BrowserModule,

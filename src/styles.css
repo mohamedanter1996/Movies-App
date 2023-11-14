@@ -162,3 +162,7 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 .show-actors-btns .btn-primary{
 background-color: transparent;
 }
+
+.secondary-main-color{
+    background-color: #0D6EFD;
+}
